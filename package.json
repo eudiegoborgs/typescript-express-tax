@@ -2,8 +2,11 @@
   "name": "typescript-express-tax",
   "version": "1.0.0",
   "description": "Express API to return amount with taxes",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "start": "npm run build && node ./lib/index.js",
     "test": "NODE_ENV=test jest"
   },
   "repository": {
@@ -19,12 +22,16 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "joi": "^17.2.1",
+    "save": "^2.4.0",
+    "swagger-ui-express": "^4.1.4"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-typescript": "^7.10.4",
     "@types/jest": "^26.0.13",
+    "@types/joi": "^14.3.4",
     "@types/node": "^14.10.1",
     "jest": "^26.4.2",
     "ts-jest": "^26.3.0",

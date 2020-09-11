@@ -1,0 +1,76 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Express Calculate Taxes API"
+  },
+  "tags": [
+    {
+      "name": "Calculator",
+      "description": "Endpoint's for calculate taxes"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/valueWithTaxes": {
+      "post": {
+        "tags": [
+          "Calculator"
+        ],
+        "summary": "Endpoint to calculate taxes",
+        "requestBody": {
+          "description": "Calculator Object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/requestPayload"
+              }
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definitions/responsePayload"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "requestPayload": {
+      "type": "object",
+      "properties": {
+        "tax": {
+          "type": "number"
+        },
+        "amount": {
+          "type": "number"
+        }
+      }
+    },
+    "responsePayload": {
+      "type": "object",
+      "properties": {
+        "valueWithTaxes": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}
