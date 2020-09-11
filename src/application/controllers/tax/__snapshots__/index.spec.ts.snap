@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing TaxController class Testing calculate function without amount 1`] = `[ValidationError: "amount" is required]`;
+
+exports[`Testing TaxController class Testing calculate function without amount 2`] = `[ValidationError: "tax" is required]`;
+
+exports[`Testing TaxController class Testing calculate function without data 1`] = `[ValidationError: "tax" is required]`;

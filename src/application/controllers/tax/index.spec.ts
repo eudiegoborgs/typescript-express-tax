@@ -35,4 +35,50 @@ describe("Testing TaxController class", () => {
       {valueWithTaxes: "10"}
     );
   });
+
+  it("Testing calculate function without data", () => {
+    const req = {
+      body: {}
+    }
+
+    const res = {}
+
+    expect(() => controller.calculate(req, res)).toThrowErrorMatchingSnapshot();
+  });
+
+  it("Testing calculate function without amount", () => {
+    const req = {
+      body: {
+        tax: 2.2,
+      }
+    }
+
+    const res = {}
+
+    expect(() => controller.calculate(req, res)).toThrowErrorMatchingSnapshot();
+  });
+
+  it("Testing calculate function without amount", () => {
+    const req = {
+      body: {
+        amount: 10000,
+      }
+    }
+
+    const res = {}
+
+    expect(() => controller.calculate(req, res)).toThrowErrorMatchingSnapshot();
+  });
+
+  it("Testing calculate function with amount", () => {
+    const req = {
+      body: {
+        amount: 10000,
+      }
+    }
+
+    const res = {}
+
+    expect(() => controller.calculate(req, res)).toThrowErrorMatchingSnapshot();
+  });
 })
